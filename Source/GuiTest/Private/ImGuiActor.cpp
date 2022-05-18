@@ -2,6 +2,8 @@
 
 
 #include "ImGuiActor.h"
+
+// This header is required to make use of Dear ImGui.
 #include <imgui.h>
 
 // Sets default values
@@ -17,9 +19,10 @@ void AImGuiActor::BeginPlay() {
 
 }
 
-// Called every frame
+// ImGui windows need to be rendered every frame.
 void AImGuiActor::Tick(float DeltaTime) {
 	Super::Tick(DeltaTime);
+
 	static float Scale = 1.0f;
 	static float ScaleOld = Scale;
 
@@ -28,6 +31,8 @@ void AImGuiActor::Tick(float DeltaTime) {
 	ImGui::Text("FPS: %.1f", ImGui::GetIO().Framerate);
 	ImGui::End();
 
+	// Update this actor's scale if the Scale variable has changed
+	// by way of the ImGui slider.
 	if (Scale != ScaleOld) {
 		ScaleOld = Scale;
 		SetActorScale3D(FVector3d{Scale});
