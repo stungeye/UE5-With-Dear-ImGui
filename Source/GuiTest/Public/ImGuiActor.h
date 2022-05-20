@@ -7,11 +7,10 @@
 #include "ImGuiActor.generated.h"
 
 UCLASS()
-class GUITEST_API AImGuiActor : public AActor
-{
+class GUITEST_API AImGuiActor : public AActor {
 	GENERATED_BODY()
-	
-public:	
+
+public:
 	// Sets default values for this actor's properties
 	AImGuiActor();
 
@@ -19,7 +18,10 @@ protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
-public:	
+	float Scale{1.0};
+	float ScaleOld{1.0};
+
+public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
