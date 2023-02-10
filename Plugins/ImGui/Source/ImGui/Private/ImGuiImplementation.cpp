@@ -7,7 +7,7 @@
 // For convenience and easy access to the ImGui source code, we build it as part of this module.
 // We don't need to define IMGUI_API manually because it is already done for this module.
 
-#if PLATFORM_XBOXONE
+#if PLATFORM_MICROSOFT
 // Disable Win32 functions used in ImGui and not supported on XBox.
 #define IMGUI_DISABLE_WIN32_DEFAULT_CLIPBOARD_FUNCTIONS
 #define IMGUI_DISABLE_WIN32_DEFAULT_IME_FUNCTIONS
